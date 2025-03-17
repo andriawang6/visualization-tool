@@ -118,16 +118,16 @@ export default class CocktailSort extends Algorithm {
 	}
 
 	setURLData(searchParams) {
-		if (searchParams.has("lastSwap")) {
-			const lastSwap = searchParams.get("lastSwap");
-			if (lastSwap === "0") {
+		if (searchParams.has('lastSwap')) {
+			const lastSwap = searchParams.get('lastSwap');
+			if (lastSwap === '0') {
 				this.toggleLastSwap();
 				this.lastSwapCheckbox.checked = false;
-			} 
+			}
 		}
 
-		if (searchParams.has("data")) {
-			const data = searchParams.get("data");
+		if (searchParams.has('data')) {
+			const data = searchParams.get('data');
 			this.listField.value = data;
 			this.sortCallback();
 		}
@@ -196,7 +196,8 @@ export default class CocktailSort extends Algorithm {
 
 	exampleCallback() {
 		const selection = this.exampleDropdown.value;
-		this.exampleDropdown.options[0].text = this.exampleDropdown.options[this.exampleDropdown.selectedIndex].text;
+		this.exampleDropdown.options[0].text =
+			this.exampleDropdown.options[this.exampleDropdown.selectedIndex].text;
 		if (!selection) {
 			return;
 		}

@@ -163,23 +163,25 @@ export default class Quicksort extends Algorithm {
 	}
 
 	setURLData(searchParams) {
-		if (searchParams.has("pivot")) {
-			const type = searchParams.get("pivot")
-			if (type === "random" || type === "perfect" || type === "min" || type === "set") {
-				this.randomPivotSelect.checked = type === "random" ? true : false;
-				this.perfectPivotSelect.checked = type === "perfect" ? true : false;
-				this.minPivotSelect.checked = type === "min" ? true : false;
-				this.setPivotSelect.checked = type === "set" ? true : false;
-				if (type === "set") {
-					this.setPivotField.value = searchParams.has("index") ? searchParams.get("index") : 0;
+		if (searchParams.has('pivot')) {
+			const type = searchParams.get('pivot');
+			if (type === 'random' || type === 'perfect' || type === 'min' || type === 'set') {
+				this.randomPivotSelect.checked = type === 'random' ? true : false;
+				this.perfectPivotSelect.checked = type === 'perfect' ? true : false;
+				this.minPivotSelect.checked = type === 'min' ? true : false;
+				this.setPivotSelect.checked = type === 'set' ? true : false;
+				if (type === 'set') {
+					this.setPivotField.value = searchParams.has('index')
+						? searchParams.get('index')
+						: 0;
 					this.setPivotField.dispatchEvent(new Event('input'));
 				}
 				this.setPivotType(type);
 			}
 		}
 
-		if (searchParams.has("data")) {
-			const data = searchParams.get("data");
+		if (searchParams.has('data')) {
+			const data = searchParams.get('data');
 			this.listField.value = data;
 			this.sortCallback();
 		}
@@ -255,7 +257,8 @@ export default class Quicksort extends Algorithm {
 
 	exampleCallback() {
 		const selection = this.exampleDropdown.value;
-		this.exampleDropdown.options[0].text = this.exampleDropdown.options[this.exampleDropdown.selectedIndex].text;
+		this.exampleDropdown.options[0].text =
+			this.exampleDropdown.options[this.exampleDropdown.selectedIndex].text;
 		if (!selection) {
 			return;
 		}

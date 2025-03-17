@@ -1,19 +1,19 @@
 name: Build and Deploy
 
 on:
-  push:
-    branches: 
-      - master
+    push:
+        branches:
+            - master
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: Create GH Pages
-      run: |
-        git remote set-url origin https://csvistool.com:${{ secrets.VISTOOL_GITHUB_TOKEN }}@github.com/csvistool/visualization-tool.git
-        git config --global user.email "csvistool@gmail.com"
-        git config --global user.name "csvistool"
-        npm ci
-        npm run deploy
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@master
+            - name: Create GH Pages
+              run: |
+                  git remote set-url origin https://csvistool.com:${{ secrets.VISTOOL_GITHUB_TOKEN }}@github.com/csvistool/visualization-tool.git
+                  git config --global user.email "csvistool@gmail.com"
+                  git config --global user.name "csvistool"
+                  npm ci
+                  npm run deploy

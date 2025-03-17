@@ -141,21 +141,21 @@ export default class SelectionSort extends Algorithm {
 	}
 
 	setURLData(searchParams) {
-		if (searchParams.has("type")) {
-			const type = searchParams.get("type");
-			if (type === "min") {
+		if (searchParams.has('type')) {
+			const type = searchParams.get('type');
+			if (type === 'min') {
 				this.isMin = true;
 				this.minButton.checked = true;
 				this.maxButton.checked = false;
-			} else if (type === "max") {
+			} else if (type === 'max') {
 				this.isMin = false;
 				this.minButton.checked = false;
-				this.maxButton.checked = true;	
+				this.maxButton.checked = true;
 			}
 		}
 
-		if (searchParams.has("data")) {
-			const data = searchParams.get("data");
+		if (searchParams.has('data')) {
+			const data = searchParams.get('data');
 			this.listField.value = data;
 			this.sortCallback();
 		}
@@ -217,7 +217,8 @@ export default class SelectionSort extends Algorithm {
 
 	exampleCallback() {
 		const selection = this.exampleDropdown.value;
-		this.exampleDropdown.options[0].text = this.exampleDropdown.options[this.exampleDropdown.selectedIndex].text;
+		this.exampleDropdown.options[0].text =
+			this.exampleDropdown.options[this.exampleDropdown.selectedIndex].text;
 		if (!selection) {
 			return;
 		}

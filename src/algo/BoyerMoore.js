@@ -140,17 +140,17 @@ export default class BoyerMoore extends Algorithm {
 	}
 
 	setURLData(searchParams) {
-		if (searchParams.has("galil")) {
-			const enabled = searchParams.get("galil");
-			if (enabled === "1") {
+		if (searchParams.has('galil')) {
+			const enabled = searchParams.get('galil');
+			if (enabled === '1') {
 				this.galilButton.checked = true;
 				this.toggleGalilRule();
 			}
 		}
 
-		if (searchParams.has("text") || searchParams.has("pattern")) {
-			this.textField.value = searchParams.get("text")
-			this.patternField.value = searchParams.get("pattern")
+		if (searchParams.has('text') || searchParams.has('pattern')) {
+			this.textField.value = searchParams.get('text');
+			this.patternField.value = searchParams.get('pattern');
 			this.findCallback();
 		}
 	}
@@ -220,7 +220,8 @@ export default class BoyerMoore extends Algorithm {
 
 	exampleCallback() {
 		const selection = this.exampleDropdown.value;
-		this.exampleDropdown.options[0].text = this.exampleDropdown.options[this.exampleDropdown.selectedIndex].text;
+		this.exampleDropdown.options[0].text =
+			this.exampleDropdown.options[this.exampleDropdown.selectedIndex].text;
 		if (!selection) {
 			return;
 		}
